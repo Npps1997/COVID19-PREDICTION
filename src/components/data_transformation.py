@@ -96,12 +96,10 @@ class DataTransformation:
 
             input_feature_train = pd.DataFrame(input_feature_train_dense)
             input_feature_test = pd.DataFrame(input_feature_test_dense)
-            print(input_feature_train)
-            print(target_feature_train_df)
 
             train_arr = pd.concat([input_feature_train, target_feature_train_df], axis=1)
             test_arr = pd.concat([input_feature_test, target_feature_test_df], axis=1)
-
+            
             # train_arr = np.column_stack((input_feature_train_arr, np.array(target_feature_train_df)))
             # test_arr = np.column_stack((input_feature_test_arr, np.array(target_feature_test_df)))
 
