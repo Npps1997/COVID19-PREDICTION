@@ -44,8 +44,42 @@ class ModelTrainer:
                 "KNN": KNeighborsClassifier(),
             }
 
+            params = {
+                        "Random Forest": {
+                            'n_estimators': [8, 16, 32, 64],
+                            'criterion': ['gini', 'entropy'],
+                            'max_depth': [None, 10, 20, 30, 40, 50],
+                            'min_samples_split': [2, 5, 10],
+                            'min_samples_leaf': [1, 2, 4],
+                            'max_features': ['auto', 'sqrt', 'log2'],
+                        },
+                        "Logistic Regression": {
+                            'penalty': ['l1', 'l2', 'elasticnet', 'none'],
+                            'C': [0.001, 0.01, 0.1, 1, 10],
+                            'solver': ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'],
+                            'max_iter': [100, 1000, 10000],
+                        },
+                        "CatBoosting Classifier": {
+                            'depth': [6, 8, 10],
+                            'learning_rate': [0.01, 0.05, 0.1],
+                            'iterations': [30, 50, 100],
+                        },
+                        "AdaBoost Classifier": {
+                            'n_estimators': [8, 16, 32, 64, 128, 256],
+                            'learning_rate': [0.1, 0.01, 0.001],
+                            # 'algorithm': ['SAMME', 'SAMME.R'],
+                        },
+                        "GaussianNB": {},
+                        "KNN": {
+                            'n_neighbors': [3, 5, 7, 9],
+                            'weights': ['uniform', 'distance'],
+                            'p': [1, 2],
+                        },
+                    }
+
+
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
-                                             models=models)
+                                             models=models, param=params)
 
 
             ## To get best model score from dict
