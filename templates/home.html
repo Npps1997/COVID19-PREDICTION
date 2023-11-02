@@ -1,0 +1,128 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Covid19 Test Prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Fill the form</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Cough_symptoms</label>
+            <select class="form-control" name="Cough_symptoms" placeholder="Enter you Cough_symptoms" required>
+                <option class="placeholder" selected disabled value="">Select your Cough_symptoms</option>
+                <option value="True">
+                    True
+                </option>
+                <option value="False">
+                    False
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fever</label>
+            <select class="form-control" name="Fever" placeholder="Enter you Fever" required>
+                <option class="placeholder" selected disabled value="">Select Fever</option>
+                <option value="True">
+                    True
+                </option>
+                <option value="False">
+                    False
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sore_throat</label>
+            <select class="form-control" name="Sore_throat"
+                placeholder="Enter you Sore_throat" required>
+                <option class="placeholder" selected disabled value="">Select Sore_throat</option>
+                <option value="True">
+                    True
+                </option>
+                <option value="False">
+                    False
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Shortness_of_breath</label>
+            <select class="form-control" name="Shortness_of_breath" placeholder="Enter you Shortness_of_breath" required>
+                <option class="placeholder" selected disabled value="">Select Shortness_of_breath</option>
+                <option value="True">
+                    True
+                </option>
+                <option value="False">
+                    False
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Headache</label>
+            <select class="form-control" name="Headache" placeholder="Enter you Headache"
+                required>
+                <option class="placeholder" selected disabled value="">Select Headache</option>
+                <option value="True">
+                    True
+                </option>
+                <option value="False">
+                    False
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Age_60_above</label>
+            <select class="form-control" name="Age_60_above" placeholder="Enter you Age_60_above"
+                required>
+                <option class="placeholder" selected disabled value="">Select Age_60_above</option>
+                <option value="Yes">
+                    Yes
+                </option>
+                <option value="No">
+                    No
+                </option>
+                <option value="Unspecified">
+                    Unspecified
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sex</label>
+            <select class="form-control" name="Sex" placeholder="Enter you Sex"
+                required>
+                <option class="placeholder" selected disabled value="">Select Sex</option>
+                <option value="male">
+                    male
+                </option>
+                <option value="female">
+                    female
+                </option>
+                <option value="Unspecified">
+                    Unspecified
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Known_contact</label>
+            <select class="form-control" name="Known_contact" placeholder="Enter you Known_contact"
+                required>
+                <option class="placeholder" selected disabled value="">Select Known_contact</option>
+                <option value="Abroad">
+                    Abroad
+                </option>
+                <option value="Other">
+                    Other
+                </option>
+                <option value="Contact with confirmed">
+                    Contact with confirmed
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Corona" required />
+        </div>
+    </form>
+    <h2>
+       Prediction {{results}}
+    </h2>
+   <body>
+</html>
