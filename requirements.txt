@@ -7,4 +7,5 @@ catboost
 statsmodels
 dill
 flask
+streamlit
 -e .
