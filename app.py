@@ -16,7 +16,6 @@ def home():
         This portal provides a simple and intuitive interface to predict the likelihood of COVID-19 based on user input.
         Please use the left-side navigation dropdown to explore different sections of the application.
     """)
-        
 
     # requirements
     st.markdown('---')
@@ -83,6 +82,7 @@ def predict_datapoint():
 
 # main Streamlit app
 def main():
+    
     menu = ['Home', 'Covid19 Prediction']
     choice = st.sidebar.selectbox('Navigation', menu)
 
